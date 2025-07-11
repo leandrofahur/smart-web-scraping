@@ -16,7 +16,7 @@ select = [
 ]
 
 [tool.black]
-line-length = 88
+line-length = 110
 target-version = ["py312"]
 exclude = '''
 /(
@@ -27,9 +27,9 @@ exclude = '''
 '''
 
 [project]
-name = "kotoba-coach-speech-ai-model"
+name = "smart-web-scraping"
 version = "0.1.0"
-description = "A speech AI model for Kotoba Coach"
+description = "AI-enhanced web scraper with stealth and smart parsing"
 authors = [
     {name = "Leandro M. F. Machado", email = "leandrofahur@gmail.com"}
 ]
@@ -44,13 +44,8 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "ruff",
-    "black",
-    "pytest",
-    "pytest-cov",
-    "pytest-asyncio",
+dependencies = [
+    "requests",    
 ]
 
 [tool.pytest.ini_options]
@@ -61,9 +56,16 @@ python_functions = ["test_*"]
 addopts = [
     "--strict-markers",
     "--strict-config",
-    "--cov=src",
+    "--cov=scraper",
     "--cov=tests",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-report=xml",
 ]
+
+[project.scripts]
+run-scraper = "scripts.run_scraper:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
