@@ -10,6 +10,7 @@ help:
 	@echo "  lint        Run linting checks"
 	@echo "  format      Format code with Black"
 	@echo "  coverage    Run tests with coverage"
+	@echo "  run         Run the scraper"
 	@echo "  ci          Run complete CI pipeline"
 	@echo ""
 	@echo "Maintenance:"
@@ -40,6 +41,11 @@ format:
 coverage:
 	@echo "Running tests with coverage..."
 	. .venv/bin/activate && python -m pytest tests/ --cov=scraper --cov=tests --cov-report=term-missing
+
+# Run the scraper
+run:
+	@echo "Running the scraper..."
+	. .venv/bin/activate && python -m scraper.core
 
 # Run complete CI pipeline
 ci: lint format test coverage
