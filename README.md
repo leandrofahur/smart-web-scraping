@@ -78,10 +78,16 @@ $ uv pip install .
 The project uses a `Makefile` for streamlined CLI commands:
 
 ```bash
-$ make lint         # Run ruff lint checks
-$ make format       # Auto-format with black + isort
-$ make test         # Run pytest
-$ make run          # Launch scraper CLI
+$ make help          # Display all commands
+$ make install       # Install all dependencies
+$ make test          # Run all tests
+$ make lint          # Run linting checks
+$ make format        # Format code with Black
+$ make coverage      # Run tests with coverage
+$ make run           # Run the scraper
+$ make ci            # Run complete CI pipelin
+$ make clean         # Clean generated files
+
 ```
 
 
